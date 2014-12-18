@@ -90,7 +90,7 @@ exports = module.exports = function swaggerMetadataMiddleware (swaggerObject) {
   spec.resolve(swaggerObject, function (err, resolved) {
     // Gather the paths, their path regex patterns and the corresponding operations
     _.each(resolved.paths, function (path, pathName) {
-      var expressPath = expressStylePath(resolved.basePath, pathName);
+      var expressPath = expressStylePath('/', pathName);
       var keys = [];
       var re = pathToRegexp(expressPath, keys);
       var cacheKey = re.toString();
