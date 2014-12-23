@@ -1,6 +1,6 @@
 {
   "name": "swagger-tools",
-  "version": "0.7.2",
+  "version": "0.0.1",
   "description": "Various tools for using and integrating with Swagger.",
   "main": "index.js",
   "scripts": {
@@ -68,27 +68,5 @@
     "traverse": "^0.6.6",
     "yamljs": "^0.2.1",
     "z-schema": "^3.2.0"
-  },
-  "gitHead": "a6719db6b0fb572f52af1f12cf90996cd8b76de7",
-  "_id": "swagger-tools@0.7.2",
-  "_shasum": "be436ac62767f8332d9a2f6199d0ef1aafaed0dc",
-  "_from": "swagger-tools@",
-  "_npmVersion": "2.1.4",
-  "_nodeVersion": "0.10.33",
-  "_npmUser": {
-    "name": "whitlockjc",
-    "email": "jwhitlock@apache.org"
-  },
-  "maintainers": [
-    {
-      "name": "whitlockjc",
-      "email": "jwhitlock@apache.org"
-    }
-  ],
-  "dist": {
-    "shasum": "be436ac62767f8332d9a2f6199d0ef1aafaed0dc",
-    "tarball": "http://registry.npmjs.org/swagger-tools/-/swagger-tools-0.7.2.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/swagger-tools/-/swagger-tools-0.7.2.tgz"
+  }
 }
