@@ -89,13 +89,27 @@
 
             if (url && url.length > 1) {
               url = url[1];
-            } else {
-              url = "http://petstore.swagger.wordnik.com/v2/swagger.json";
             }
           }
-
           initSwaggerUi(url);
         }
+      });
+      $('#token').click(function(event) {
+        event.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: '/pub/user/auth',
+          data: JSON.stringify({
+            id: $('#input_apiKeyID').val(),
+            password: $('#input_apiKeyPassword').val()
+          }),
+          success: function (data) {
+            window.authorizations.add("key", new ApiKeyAuthorization("Authorization", "Bearer " + data.token, "header"));
+            $('#currentToken').html('Bearer token: ' + data.token.substring(0, 15) + '...');
+              $('#api_selector').hide();
+          },
+          contentType: "application/json; charset=utf-8"
+        });
       });
     });
   </script>
@@ -104,11 +118,11 @@
 <body class="swagger-section">
 <div id='header'>
   <div class="swagger-ui-wrap">
-    <a id="logo" href="http://swagger.io">swagger</a>
-    <form id='api_selector'>
-      <div class='input'><input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text"/></div>
-      <div class='input'><input placeholder="api_key" id="input_apiKey" name="apiKey" type="text"/></div>
-      <div class='input'><a id="explore" href="#">Explore</a></div>
+    <div id="currentToken">Bearer token: none</div>
+    <form id="api_selector" autocomplete="on">
+      <div class="input"><input type="text" id="input_apiKeyID" name="username" value="" placeholder="Email/Phone" type="text" autocomplete="on"/></div>
+      <div class="input"><input type="password" id="input_apiKeyPassword" name="password" value="" placeholder="Password" type="password" autocomplete="on"/></div>
+      <div class="input"><input type="submit" id="token" value="Get new token"/></div>
     </form>
   </div>
 </div>

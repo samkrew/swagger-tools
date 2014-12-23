@@ -1161,7 +1161,7 @@
   cursor: pointer;
 }
 .swagger-section #header {
-  background-color: #89bf04;
+  background-color: #544f50;
   padding: 14px;
 }
 .swagger-section #header a#logo {
@@ -1189,14 +1189,15 @@
 .swagger-section #header form#api_selector .input input#input_baseUrl {
   width: 400px;
 }
-.swagger-section #header form#api_selector .input a#explore {
+.swagger-section #header form#api_selector .input input#token {
+  margin: -1px 0 0 0;
   display: block;
   text-decoration: none;
-  font-weight: bold;
-  padding: 6px 8px;
+  padding: 5px 8px 6px 8px;
   font-size: 0.9em;
   color: white;
-  background-color: #547f00;
+  border: 0px;
+  background-color: #343f30;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   -o-border-radius: 4px;
@@ -1204,8 +1205,23 @@
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-.swagger-section #header form#api_selector .input a#explore:hover {
-  background-color: #547f00;
+
+#currentToken {
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 8px;
+  font-size: 0.9em;
+  color: white;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -khtml-border-radius: 4px;
+}
+
+.swagger-section #header form#api_selector .input input#token:hover {
+  background-color: #443f50;
 }
 .swagger-section #header form#api_selector .input input {
   font-size: 0.9em;

@@ -515,7 +515,6 @@ var validateValue = module.exports.validateValue =
           _.each(allResults, function (results) {
             if (results && helpers.getErrorCount(results) > 0) {
               err = new Error('Failed schema validation');
-
               err.code = 'SCHEMA_VALIDATION_FAILED';
               err.errors = results.errors;
               err.warnings = results.warnings;

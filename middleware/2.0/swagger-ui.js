@@ -77,7 +77,7 @@ exports = module.exports = function swaggerUIMiddleware (swaggerObject, options)
       res.setHeader('Content-Type', 'application/json');
       return res.end(apiDocs);
     } else if (path === options.swaggerUi || path.indexOf(options.swaggerUi + '/') === 0) {
-      res.setHeader('Swagger-API-Docs-URL', options.apiDocs);
+      res.setHeader('Swagger-API-Docs-URL', options.prefix+options.apiDocs);
 
       if (path === options.swaggerUi || path === options.swaggerUi + '/') {
         req.url = '/';
